@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="/home"> Home</a> |
+    <a href="/patent/list">patient</a>
+    </nav>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">patientId</th>
+                <th scope="col">patientNumber</th>
+                <th scope="col">firstName</th>
+                <th scope="col">middleName</th>
+                <th scope="col">lastName</th>
+                <th scope="col">cgpa</th>
+                <th scope="col">enrollment Date</th>
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="Student,counter : ${student}">
+
+                <th scope="row" th:text="${counter.count}+${'.'}"></th>
+                <td th:text="${Student.getStudentId()}"></td>
+                <td th:text="${Student.getStudentNumber()}"></td>
+                <td th:text="${Student.getFirstName()}"></td>
+                <td th:text="${Student.getMiddleName()}"></td>
+                <td th:text="${Student.getLastName()}"></td>
+                <td th:text="${Student.getCgpa()}"></td>
+                <td th:text="${Student.getEnrollmentDate()}"></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+   </body>
+
+
+</html>
